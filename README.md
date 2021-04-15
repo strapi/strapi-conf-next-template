@@ -47,6 +47,12 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Clone and Deploy
+
+Click the button below to clone and deploy this template on [Vercel](https://vercel.com/). For this to work, you will need your API to be deployed to add the appropriate env variable in your Vercel config!
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fstrapi%2Fstrapi-conf-next-template)
+
 ## Customize
 
 Just update your data and styling to get it to fit your needs!
