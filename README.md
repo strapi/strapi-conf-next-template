@@ -1,0 +1,1 @@
+# strapi-conf-next-template-
