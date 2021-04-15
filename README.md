@@ -1,5 +1,3 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fstrapi%2Fstrapi-conf-next-template)
-
 # Strapi Conf Next Template - based on the awesome [Virtual Event Starter Kit](https://vercel.com/virtual-event-starter-kit) by [Vercel](https://vercel.com/)!
 
 # Designed to work with [Strapi Conf Admin Template](https://github.com/strapi/strapi-conf-admin-template)
@@ -48,12 +46,6 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Clone and Deploy
-
-Click the button below to clone and deploy this template on [Vercel](https://vercel.com/).
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fstrapi%2Fstrapi-conf-next-template)
 
 ## Customize
 
