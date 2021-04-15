@@ -15,16 +15,16 @@
  */
 
 import GridRow from './GridRow';
-import { Job, Perk } from '@lib/types';
+import { Job } from '@lib/types';
 import styles from './styles.module.scss';
 
 type Props = {
-  items: Job[] | Perk[];
+  items: Job[];
 };
 interface AllCompanies {
   [key: string]: {
     discord?: string;
-    items?: Job[] | Perk[];
+    items?: Job[];
     rank?: number;
   };
 }

@@ -20,7 +20,6 @@ export type PageState = 'registration' | 'ticket';
 
 export type UserData = {
   id?: string;
-  guestId?: number;
   ticketNumber?: number;
   username?: string;
   name?: string;

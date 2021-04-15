@@ -125,26 +125,27 @@ export default function Form({ defaultUsername = '', setTicketGenerationState }:
 
             let usernameFromResponse: string;
             let name: string;
-            const res = await saveGithubToken({
-              id: userData.id,
-              guestId: userData.guestId,
-              username: data?.login,
-              name: data?.name,
-              token: data.token
-            });
+            if (data.type === 'token') {
+              const res = await saveGithubToken({ id: userData.id, token: data.token });
 
-            if (!res.ok) {
-              throw new Error('Failed to store oauth result');
+              if (!res.ok) {
+                throw new Error('Failed to store oauth result');
+              }
+
+              const responseJson = await res.json();
+              usernameFromResponse = responseJson.username;
+              name = responseJson.name;
+            } else {
+              usernameFromResponse = data.login;
+              name = data.name;
             }
 
-            const responseJson = await res.json();
-            usernameFromResponse = responseJson.username;
-            name = responseJson.name;
             document.body.classList.add('ticket-generated');
             setUserData({ ...userData, username: usernameFromResponse, name });
             setUsername(usernameFromResponse);
             setFormState('default');
             setTicketGenerationState('default');
+
             // Prefetch GitHub avatar
             new Image().src = `https://github.com/${usernameFromResponse}.png`;
 

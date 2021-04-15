@@ -17,6 +17,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { nanoid } from 'nanoid';
 import * as qs from 'querystring';
+import redis from '@lib/redis';
 import { renderSuccess, renderError } from '@lib/render-github-popup';
 
 /**
@@ -68,14 +69,19 @@ export default async function githubOAuth(req: NextApiRequest, res: NextApiRespo
   }
 
   const user = await userRes.json();
-  const tokenId = nanoid();
 
-  res.end(
-    renderSuccess({
-      type: 'token',
-      token: tokenId,
-      login: user.login,
-      name: user.name
-    })
-  );
+  if (redis) {
+    const token = nanoid();
+    const key = `github-user:${token}`;
+
+    await redis
+      .multi()
+      .hmset(key, 'id', user.id, 'login', user.login, 'name', user.name || '')
+      .expire(key, 60 * 10) // 10m TTL
+      .exec();
+
+    res.end(renderSuccess({ type: 'token', token }));
+  } else {
+    res.end(renderSuccess({ type: 'user', login: user.login, name: user.name }));
+  }
 }

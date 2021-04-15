@@ -15,7 +15,7 @@
  */
 
 import { IconDiscord, IconLink } from '@components/icons';
-import { Job, Perk } from '@lib/types';
+import { Job } from '@lib/types';
 import styles from './styles.module.scss';
 
 interface GridItemProps {
@@ -37,7 +37,7 @@ export default function GridRow({ items, title, discord }: GridItemProps) {
         )}
       </div>
       <div className={styles.grid}>
-        {items?.map((item: Job | Perk, index: number) => (
+        {items?.map((item: Job) => (
           <a
             key={item.id}
             className={styles.card}

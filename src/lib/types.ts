@@ -95,7 +95,6 @@ export type Job = {
 
 export type ConfUser = {
   id?: string;
-  guestId?: number;
   email: string;
   ticketNumber: number;
   name?: string | null;
@@ -103,12 +102,16 @@ export type ConfUser = {
   createdAt: number;
 };
 
-export type GitHubOAuthData = {
-  type: 'token';
-  token: string;
-  name: string;
-  login: string;
-};
+export type GitHubOAuthData =
+  | {
+      type: 'token';
+      token: string;
+    }
+  | {
+      type: 'user';
+      name: string;
+      login: string;
+    };
 
 export type NavigationItem = {
   url: string;
