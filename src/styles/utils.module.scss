@@ -1,0 +1,55 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.word {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.appear {
+  opacity: 0;
+  animation: appear 0.8s cubic-bezier(0.1, 0, 0.175, 1) forwards;
+}
+
+.appearFirst {
+  animation-delay: 0.4s;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+.showOnMobile {
+  display: block;
+}
+
+.hideOnMobile {
+  display: none;
+}
+
+@include breakpoint($sm) {
+  .showOnMobile {
+    display: none;
+  }
+
+  .hideOnMobile {
+    display: block;
+  }
+}

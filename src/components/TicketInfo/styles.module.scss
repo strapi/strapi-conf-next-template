@@ -1,0 +1,78 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.info {
+  @include breakpoint($sm) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: calc(#{$space-4x} * var(--size));
+    font-size: calc(1em * var(--size));
+  }
+}
+
+.logo {
+  margin-bottom: $space-6x;
+  font-size: 18px;
+
+  @include breakpoint($sm) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    font-size: calc(16px * var(--size));
+  }
+}
+
+.date {
+  text-transform: uppercase;
+  font-size: calc(20px * var(--size));
+  line-height: 1.15;
+  margin-bottom: $space-4x;
+
+  @include breakpoint($sm) {
+    margin-bottom: 0;
+  }
+}
+
+.createdBy {
+  display: flex;
+  align-items: center;
+  color: $gray;
+
+  @include breakpoint($sm) {
+    margin-right: $space-4x;
+  }
+}
+
+.createdByText {
+  white-space: nowrap;
+  margin-right: $space;
+}
+
+.createdByLogo {
+  height: calc(16px * var(--size));
+  display: inline-flex;
+}
+
+.url {
+  color: $gray;
+  margin-bottom: $space-12x;
+
+  @include breakpoint($sm) {
+    margin-bottom: 0;
+  }
+}

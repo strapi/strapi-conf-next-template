@@ -1,0 +1,196 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-size: cover;
+  padding: 0 $space-4x;
+  position: relative;
+}
+
+.hero {
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: $space-4x;
+  max-width: 700px;
+
+  @include breakpoint($sm) {
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 800;
+  }
+}
+
+.decorator {
+  opacity: 0.3;
+  display: none;
+
+  @include breakpoint($l) {
+    display: block;
+  }
+}
+
+.description {
+  font-weight: 400;
+  font-size: $text-md;
+  line-height: 1.4;
+  text-align: center;
+  color: $santas-gray;
+  max-width: 355px;
+
+  @include breakpoint($sm) {
+    font-size: 20px;
+    max-width: 531px;
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.input {
+  border: none;
+  width: 100%;
+  background-color: $port-gore;
+  outline: none;
+  height: 56px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: $text-md;
+  color: $white;
+  font-family: inherit;
+
+  @include breakpoint($sm) {
+    width: calc(100% - #{$space-32x});
+    padding-right: 0;
+  }
+
+  &::placeholder {
+    color: $santas-gray;
+  }
+}
+
+.inputLabel {
+  background-color: $port-gore;
+  border-radius: $space-2x;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  display: block;
+
+  &.focused {
+    background-color: $port-gore;
+  }
+
+  &.error {
+    background: red;
+  }
+
+  &.success {
+    background: $blue-ribbon;
+  }
+}
+
+.inputText {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inputError {
+  background-color: transparent;
+}
+
+.formRow {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+
+  @include breakpoint($sm) {
+    max-width: 480px;
+  }
+
+  @include breakpoint($lg) {
+    margin: 0;
+  }
+}
+
+.submit {
+  width: 100%;
+  height: 56px;
+  margin-top: $space-4x;
+  border: none;
+  border-radius: $space-2x;
+  background: $electric-violet;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: $text-md;
+  letter-spacing: -0.02em;
+  outline: none;
+  font-weight: 500;
+  color: $white;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &.register {
+    @include breakpoint($sm) {
+      width: 120px;
+      height: 42px;
+      margin-top: 0;
+      position: absolute;
+      border-radius: 5px;
+      right: $space-2x;
+      top: $space-2x;
+    }
+  }
+
+  &.loading {
+    cursor: default;
+  }
+
+  &.default:hover {
+    background: $electric-violet;
+    color: $white;
+  }
+
+  &.error:hover {
+    background: $black;
+    color: $white;
+  }
+
+  &.default:disabled,
+  &.default:disabled:hover {
+    cursor: default;
+    background: $shark;
+    border-color: $shark;
+    color: $white;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+}

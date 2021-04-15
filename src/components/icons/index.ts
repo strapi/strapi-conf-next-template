@@ -1,0 +1,14 @@
+export { default as IconAvatar } from './icon-avatar';
+export { default as IconCheck } from './icon-check';
+export { default as IconConf } from './icon-conf';
+export { default as IconCopy } from './icon-copy';
+export { default as IconDiscord } from './icon-discord';
+export { default as IconDownload } from './icon-download';
+export { default as IconFacebook } from './icon-facebook';
+export { default as IconGithub } from './icon-github';
+export { default as IconInstagram } from './icon-instagram';
+export { default as IconLink } from './icon-link';
+export { default as IconLinkedin } from './icon-linkedin';
+export { default as IconLogo } from './icon-logo';
+export { default as IconPlatform } from './icon-platform';
+export { default as IconTwitter } from './icon-twitter';

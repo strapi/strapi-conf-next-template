@@ -1,0 +1,145 @@
+//////////////////////////
+//     BREAKPOINTS      //
+//////////////////////////
+
+$xxs: 320px;
+$xs: 480px;
+$sm: 768px;
+$md: 992px;
+$l: 1024px;
+$lg: 1200px;
+$xlg: 1300px;
+$xl: 1441px;
+$xxl: 1680px;
+
+//////////////////////////
+//        SPACINGS      //
+//////////////////////////
+
+$space: 4px;
+$space-2x: 8px;
+$space-3x: 12px;
+$space-4x: 16px;
+$space-6x: 24px;
+$space-8x: 32px;
+$space-10x: 40px;
+$space-12x: 48px;
+$space-16x: 64px;
+$space-32x: 128px;
+
+//////////////////////////
+//      FONT-SIZES      //
+//////////////////////////
+
+$text-xs: 12px;
+$text-sm: 14px;
+$text-md: 16px;
+$text-lg: 18px;
+$text-xl: 24px;
+
+//////////////////////////
+//     FONT-WEIGHTS     //
+//////////////////////////
+
+$normal: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+//////////////////////////
+//        SIZES         //
+//////////////////////////
+
+$header-height: 72px;
+
+//////////////////////////
+//        COLORS        //
+//////////////////////////
+
+$white: #ffffff;
+$sea-shell: #f1f1f1;
+$gallery: #eaeaea;
+$mercury: #e5e5e5;
+$santas-gray: #9e9cb3;
+$gray: #888888;
+$oslo-gray: #8a8e96;
+$emperor: #555555;
+$tundora: #444444;
+$tuna: #33373c;
+$shark: #252729;
+$cod-gray: #111111;
+$black: #000000;
+$heliotrope: #ad7eff;
+$electric-violet: #8c4bff;
+$bossanova: #372953;
+$port-gore: #2e2344;
+$valhalla: #2e1a53;
+$stratos: #0e0128;
+$tolopea: #150438;
+$blue-ribbon: #0070f3;
+$royal-blue: #3362df;
+
+//////////////////////////
+//        MIXINS        //
+//////////////////////////
+
+@mixin breakpoint($point) {
+  @media (min-width: $point) {
+    @content;
+  }
+}
+
+@mixin maxWidth() {
+  width: 100%;
+  max-width: $xxl;
+  margin: 0 auto;
+}
+
+@mixin sponsorCard() {
+  border-radius: $space-2x;
+  background: $cod-gray;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px $bossanova;
+  background: $tolopea;
+  padding: 1px;
+  margin-bottom: 30px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border: solid 1px $heliotrope;
+  }
+
+  @include breakpoint($sm) {
+    margin-bottom: 0;
+  }
+}
+
+// Mixin for fluid types
+@function stripUnit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluidType($minVw, $maxVw, $minFontSize, $maxFontSize) {
+  $u1: unit($minVw);
+  $u2: unit($maxVw);
+  $u3: unit($minFontSize);
+  $u4: unit($maxFontSize);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $minFontSize;
+      @media screen and (min-width: $minVw) {
+        font-size: calc(
+          #{$minFontSize} + #{stripUnit($maxFontSize - $minFontSize)} *
+            ((100vw - #{$minVw}) / #{stripUnit($maxVw - $minVw)})
+        );
+      }
+      @media screen and (min-width: $maxVw) {
+        font-size: $maxFontSize;
+      }
+    }
+  }
+}

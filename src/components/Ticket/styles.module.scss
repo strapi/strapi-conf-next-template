@@ -1,0 +1,156 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.hero {
+  font-size: 52px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+
+  @include breakpoint($sm) {
+    font-size: 100px;
+    line-height: 1;
+    font-weight: 800;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include breakpoint($lg) {
+    font-size: $space-16x;
+    text-align: left;
+  }
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.4;
+  color: $santas-gray;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 350px;
+
+  @include breakpoint($sm) {
+    font-size: 24px;
+    max-width: 415px;
+  }
+
+  @include breakpoint($lg) {
+    text-align: left;
+    margin: 30px 0;
+  }
+}
+
+.ticketText {
+  margin-bottom: 30px;
+}
+
+.ticketLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 45px;
+  margin: $space-10x auto;
+
+  @include breakpoint($lg) {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
+}
+
+.ticketShareLayout {
+  align-items: center;
+  margin-bottom: auto;
+}
+
+.ticketVisual {
+  position: relative;
+  border-radius: $space-4x;
+  overflow: hidden;
+  width: 330px;
+  margin: 0 auto;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 72px;
+    height: 58px;
+    background-color: $stratos;
+    position: absolute;
+    z-index: 100;
+    border-radius: 50%;
+  }
+
+  &:before {
+    left: 50%;
+    top: -7.5%;
+    transform: translateZ(0) translateX(-50%) rotate(90deg);
+  }
+
+  &:after {
+    left: 50%;
+    bottom: -7.5%;
+    transform: translateZ(0) translateX(-50%) rotate(90deg);
+  }
+
+  @include breakpoint($sm) {
+    width: 650px;
+
+    &:before {
+      top: 50%;
+      left: -7%;
+      transform: translateZ(0) translateY(-50%);
+    }
+
+    &:after {
+      top: 50%;
+      left: 96%;
+      transform: translateZ(0) translateY(-50%);
+    }
+  }
+}
+
+.ticketActions {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @include breakpoint($sm) {
+    flex-direction: row;
+  }
+}
+
+.ticketCopy {
+  margin-top: 30px;
+}
+
+.ticketActionsPlaceholder {
+  height: 280px;
+
+  @include breakpoint($sm) {
+    height: 157px;
+  }
+}
+
+.ticketVisualWrapper {
+  width: 100%;
+}

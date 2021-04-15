@@ -1,0 +1,196 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.wrapper {
+  color: $santas-gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-delay: 2.6s;
+  flex-direction: column;
+
+  @include breakpoint($sm) {
+    flex-direction: row;
+  }
+}
+
+:global(.ticketGenerated) .wrapper {
+  animation-delay: 1.2s;
+}
+
+.label {
+  width: 100%;
+  margin-bottom: $space-2x;
+
+  @include breakpoint($sm) {
+    width: auto;
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+}
+
+.labelWrapper {
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  justify-content: space-between;
+
+  @include breakpoint($sm) {
+    width: auto;
+  }
+}
+
+.field {
+  position: relative;
+  border-radius: $space-2x;
+  overflow: hidden;
+  background: $port-gore;
+
+  @include breakpoint($sm) {
+    padding-right: 50px;
+
+    &.desktopCopyDisabled {
+      padding-right: 0px;
+    }
+  }
+
+  * {
+    color: $santas-gray;
+    transition: color 0.2s ease;
+  }
+
+  &:hover * {
+    color: $white;
+    transition: color 0.2s ease;
+  }
+}
+
+.mobileCopy {
+  margin-bottom: 10px;
+  display: flex;
+
+  @include breakpoint($sm) {
+    margin-bottom: 0;
+    display: none;
+  }
+
+  * {
+    color: $santas-gray;
+    transition: color 0.2s ease;
+  }
+
+  &:hover * {
+    color: $white;
+    transition: color 0.2s ease;
+  }
+}
+
+.mobileCopy.mobileCopyDisabled {
+  display: none;
+}
+
+.url {
+  width: calc(100vw - 36px);
+  user-select: all;
+  overflow-x: scroll;
+  white-space: nowrap;
+  display: block;
+
+  padding: $space-2x 14px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include breakpoint($xs) {
+    width: 400px;
+  }
+}
+
+.fade {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(37, 39, 41, 0%) 0%, $shark 100%);
+  top: 0;
+  bottom: 0;
+  right: 0px;
+  width: 50px;
+  z-index: 1;
+  display: block;
+  border-radius: $space-2x;
+  pointer-events: none;
+
+  @include breakpoint($sm) {
+    right: 50px;
+
+    &.desktopCopyDisabled {
+      right: 0px;
+    }
+  }
+}
+
+.desktopCopy.desktopCopyDisabled {
+  display: none;
+}
+
+.copied {
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.2s ease !important;
+
+  &.visible {
+    opacity: 1;
+  }
+
+  @include breakpoint($sm) {
+    position: absolute;
+    right: 50px;
+    top: 0px;
+    bottom: 0px;
+    background: linear-gradient(90deg, rgba(37, 39, 41, 0%) 0px, $shark 40px);
+    padding-left: 50px;
+  }
+}
+
+.copyButton {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: $space-2x;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -10px;
+
+  @include breakpoint($sm) {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-right: 0px;
+    width: 50px;
+  }
+}

@@ -1,0 +1,75 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.sponsorSection {
+  margin: 50px auto;
+}
+
+.grid {
+  width: 100%;
+
+  @include breakpoint($sm) {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+.tierName {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card {
+  @include sponsorCard();
+}
+
+.bronze {
+  border-radius: 6px;
+}
+
+.cardBody {
+  padding: $space-4x;
+  color: $santas-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 190px;
+  position: relative;
+  display: flex;
+}
+
+.name {
+  font-weight: bold;
+  color: $sea-shell;
+  font-size: 24px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.description {
+  margin-top: $space;
+  margin-bottom: 0;
+  line-height: 1.4;
+}

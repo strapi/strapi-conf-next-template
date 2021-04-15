@@ -1,0 +1,137 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.wrapper {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(270deg, rgba(14, 1, 40, 1), rgba(14, 1, 40, 0)),
+      linear-gradient(to bottom left, rgba(14, 1, 40, 1), rgba(14, 1, 40, 0) 60%);
+    z-index: 0;
+    display: none;
+
+    @include breakpoint($xs) {
+      display: block;
+    }
+  }
+}
+
+.rowWrapper {
+  width: 100%;
+}
+
+.rowContainer {
+  width: 100%;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $bossanova;
+    z-index: 2;
+  }
+}
+
+.row {
+  display: flex;
+  padding: $space-4x 0 0 $space-4x;
+  width: 100%;
+  border-top: solid 1px $bossanova;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.stageName {
+  font-size: 22px;
+  color: $white;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  padding-bottom: $space-2x;
+  position: absolute;
+  left: initial;
+  color: $heliotrope;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.talks {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 60px;
+  width: auto;
+
+  > div {
+    margin-right: $space-4x;
+  }
+}
+
+.talkCard {
+  width: calc(100vw - 48px);
+  max-width: 270px;
+
+  @include breakpoint($xs) {
+    width: 270px;
+  }
+}
+
+@include breakpoint($sm) {
+  .container {
+    margin-top: $space-4x;
+  }
+
+  .row {
+    margin: 0 $space-8x 0 0;
+    flex-direction: row;
+    padding: $space-8x 0 0;
+  }
+
+  .talks {
+    flex-direction: row;
+    margin-top: 0;
+    padding-left: 20px;
+    padding-right: 70px;
+    width: auto;
+  }
+
+  .stageName {
+    min-width: 260px;
+    font-size: $space-8x;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(14, 1, 40, 1), rgba(14, 1, 40, 0)),
+      linear-gradient(to bottom right, rgba(14, 1, 40, 1), rgba(14, 1, 40, 0) 60%);
+    padding-left: 24px;
+  }
+}

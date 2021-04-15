@@ -1,0 +1,243 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.SpeakerCard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 90px;
+}
+
+.squared {
+  width: 1000px;
+  height: 100%;
+  padding: 30px;
+
+  .date {
+    right: 34px;
+  }
+
+  .speakerWrapper {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .talkWrapper {
+    display: none;
+  }
+
+  .speakerHeading {
+    margin-bottom: 24px;
+  }
+
+  .speakerDetails {
+    margin-top: 24px;
+
+    .name {
+      line-height: 100%;
+      margin-bottom: 9px;
+    }
+  }
+
+  .portraitContainer,
+  .textWrapper {
+    width: 100%;
+  }
+
+  .portraitContainer {
+    margin: 0;
+  }
+
+  .portraitWrapper {
+    width: 442px;
+    height: 442px;
+  }
+
+  .portraitBackground {
+    width: 435px;
+    height: 435px;
+  }
+
+  .portrait {
+    width: 410px;
+    height: 410px;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .marketing {
+    position: absolute;
+    bottom: 33px;
+    right: 34px;
+  }
+
+  .hashtag {
+    margin: 0;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.date {
+  position: absolute;
+  top: 0;
+  right: 65px;
+  font-size: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 1;
+  letter-spacing: 4px;
+  text-shadow: 0px 2px 4px #1923c1, 0px 4px 20px #272cd7;
+}
+
+.decoratorTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.decoratorBottom {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.speakerWrapper {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.speakerHeading {
+  color: #d67eff;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.portraitContainer,
+.textWrapper {
+  width: 900px;
+}
+
+.portraitWrapper,
+.portraitBackground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portraitWrapper,
+.portraitBackground,
+.portrait {
+  border-radius: 100%;
+}
+
+.portraitWrapper {
+  width: 452px;
+  height: 452px;
+  margin: 0 auto;
+  border-radius: 100%;
+  background: linear-gradient(170deg, #db72f7 30%, #2231ea) left bottom transparent no-repeat;
+}
+
+.portraitBackground {
+  width: 445px;
+  height: 445px;
+  background-color: #332168;
+  border-radius: 100%;
+}
+
+.portrait {
+  width: 420px;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+
+.speakerDetails {
+  margin-top: 42px;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  .name {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .position {
+    color: #d67eff;
+    font-size: 32px;
+    font-weight: 500;
+  }
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.talkWrapper {
+  width: 900px;
+  p {
+    text-align: left;
+    line-height: 120%;
+    font-size: 70px;
+    font-weight: 700;
+  }
+}
+
+.textEffect {
+  letter-spacing: 2.5px;
+  text-shadow: 0px 2px 4px #1923c1, 0px 4px 20px #272cd7;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #da6bf7;
+}
+
+.marketing {
+  position: absolute;
+  bottom: 52px;
+  right: 65px;
+}
+
+.hashtag {
+  font-family: Monaco, 'sans-serif';
+  font-size: 26px;
+  color: #d6c8ff;
+  margin: 0 0 14px 0;
+  text-align: right;
+}
+
+.strapiLogo {
+  height: 35px;
+  display: flex;
+  justify-content: flex-end;
+}

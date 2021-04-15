@@ -1,0 +1,152 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid $bossanova;
+
+  @include breakpoint($sm) {
+    width: calc(80px * var(--size));
+    height: calc(80px * var(--size));
+  }
+}
+
+.text {
+  flex: 1;
+  margin-left: 10px;
+
+  @include breakpoint($sm) {
+    margin-left: calc(15px * var(--size));
+  }
+}
+
+.name {
+  font-size: 24px;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+
+  @include breakpoint($sm) {
+    font-size: calc($space-8x * var(--size));
+    margin-bottom: 5px;
+  }
+}
+
+.username {
+  display: inline-block;
+  font-size: calc(1em * var(--size));
+  color: $santas-gray;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.githubIcon {
+  margin-right: calc(5px * var(--size));
+  display: inline-flex;
+}
+
+.emptyIcon {
+  display: block;
+  background: linear-gradient(135deg, #b4b6b8, #7f8183);
+  width: 60px;
+
+  @include breakpoint($sm) {
+    width: calc(80px * var(--size));
+  }
+}
+
+.skeleton {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+
+  &.loaded {
+    width: unset !important;
+  }
+
+  &:not(.wrapper):not(.show) {
+    display: none;
+  }
+
+  &:not(.wrapper):not(.loaded) {
+    border-radius: $space;
+    background-image: linear-gradient(270deg, $shark, #34383d, #34383d, $shark);
+    background-size: 200% 100%;
+    animation: loading 2s ease-in-out infinite;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: 0;
+    bottom: 0;
+    border-radius: $space;
+    z-index: 100;
+    background-image: linear-gradient(270deg, $cod-gray, $bossanova, $bossanova, $cod-gray);
+    background-size: 200% 100%;
+    animation: loading 2s ease-in-out infinite;
+  }
+
+  &:not(.show)::before {
+    content: none;
+  }
+}
+
+.inline {
+  display: inline-block !important;
+}
+
+.rounded {
+  &:before,
+  &.wrapper:before {
+    width: 62px;
+    height: 62px;
+    border-radius: 50% !important;
+
+    @include breakpoint($sm) {
+      width: calc(82px * var(--size));
+      height: calc(82px * var(--size));
+      border-radius: 50% !important;
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

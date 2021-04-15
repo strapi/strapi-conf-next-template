@@ -1,0 +1,185 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.grid {
+  margin: 0 auto 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-gap: 24px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  opacity: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include breakpoint($xs) {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+.companyRow {
+  padding: 33px 0;
+
+  @include breakpoint($sm) {
+    padding: 33px 0;
+  }
+}
+
+.companyName {
+  color: $sea-shell;
+  font-size: 24px;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: $space-4x 0 $space;
+  padding-bottom: $space;
+  display: inline-flex;
+
+  @include breakpoint($sm) {
+    font-size: 28px;
+  }
+}
+
+.rowHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: intial;
+  margin-bottom: $space-4x;
+  flex-direction: column;
+
+  @include breakpoint($sm) {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.card {
+  border-radius: $space-2x;
+  background: $cod-gray;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px $bossanova;
+  background: $tolopea;
+  padding: 1px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border: solid 1px $heliotrope;
+  }
+}
+
+.cardBody {
+  padding: $space-4x;
+  color: $santas-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.title {
+  font-weight: bold;
+  color: $sea-shell;
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.company {
+  color: $sea-shell;
+  margin: $space 0 0 0;
+}
+
+.title {
+  margin: 0;
+}
+
+.description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  color: $white;
+  font-weight: bold;
+  font-size: $text-md;
+  margin: 0;
+}
+
+.link:hover {
+  color: $white;
+}
+
+.icon {
+  color: $white;
+  margin-left: $space;
+}
+
+.button {
+  border-radius: $space-2x;
+  border: none;
+  color: $white;
+  background: $heliotrope;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: $text-md;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  outline: none;
+  transition: background-color 0.2s ease;
+  padding: 0 $space-4x;
+  height: 50px;
+  width: 270px;
+  min-width: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    background: black;
+    color: $heliotrope;
+    border: 1px solid $heliotrope;
+  }
+
+  &:hover > svg,
+  &:focus > svg {
+    fill: $heliotrope;
+  }
+
+  & > svg {
+    margin-left: $space-2x;
+    min-height: $space-8x;
+    min-width: $space-8x;
+  }
+}

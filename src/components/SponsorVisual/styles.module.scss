@@ -1,0 +1,155 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.SponsorCard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 105px 90px 65px;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.date {
+  position: absolute;
+  top: 0;
+  right: 65px;
+  font-size: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 1;
+  letter-spacing: 4px;
+  text-shadow: 0px 2px 4px #1923c1, 0px 4px 20px #272cd7;
+}
+
+.decoratorTop {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.decoratorBottom {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+.sponsorWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 1346px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.sponsorHeading {
+  color: #d67eff;
+  font-size: 40px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 auto 44px;
+}
+
+.sponsorLogoBackground {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $black;
+  border-radius: 18px;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: -4px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #db72f7 0%, #2231ea 100%);
+    z-index: -1;
+  }
+}
+
+.sponsorLogo {
+  width: 100%;
+  height: 90%;
+  position: relative;
+  overflow: hidden;
+}
+
+.sponsorDetails {
+  margin-top: 63px;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  .name {
+    color: #d67eff;
+    font-size: 32px;
+    font-weight: 500;
+  }
+}
+
+.textEffect {
+  letter-spacing: 2.5px;
+  text-shadow: 0px 2px 4px #1923c1, 0px 4px 20px #272cd7;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #da6bf7;
+}
+
+.marketing {
+  position: absolute;
+  bottom: 52px;
+  right: 65px;
+}
+
+.hashtag {
+  font-family: Monaco, 'sans-serif';
+  font-size: 26px;
+  color: #d6c8ff;
+  margin: 0 0 14px 0;
+  text-align: right;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px 18px;
+  margin: 0;
+  background: linear-gradient(139.32deg, #a378fd -25.92%, #a65af1 90.92%);
+  box-shadow: 0px 2px 30px rgba(20, 40, 215, 0.7);
+  border-radius: 22px;
+  font-size: 30px;
+  font-weight: 700;
+}

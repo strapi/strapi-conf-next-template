@@ -1,0 +1,125 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.container {
+  padding: $space-4x 0;
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include breakpoint($sm) {
+    flex-direction: row;
+    padding: $space-8x 0;
+  }
+}
+
+.speakerDetails {
+  padding: $space-4x 0;
+  display: flex;
+  flex-direction: column;
+  flex: unset;
+
+  @include breakpoint($sm) {
+    padding: 0;
+    padding-left: $space-8x;
+  }
+}
+
+.talkDetails {
+  margin-top: $space-8x;
+  max-width: 800px;
+
+  @include breakpoint($sm) {
+    color: $gallery;
+  }
+}
+
+.bio {
+  color: $gallery;
+  max-width: 800px;
+}
+
+.imageWrapper {
+  max-width: 350px;
+
+  @include breakpoint($sm) {
+    min-width: 300px;
+  }
+}
+
+.image {
+  border-radius: $space-2x;
+
+  @include breakpoint($sm) {
+    max-width: 300px;
+    max-height: 400px;
+  }
+}
+
+.name {
+  font-weight: 800;
+  color: $white;
+  font-size: 56px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.company {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 20px;
+}
+
+.bioHeader {
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  color: $white;
+}
+
+.socials {
+  width: auto;
+  display: inline-block;
+}
+
+.socialsHeader {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: $white;
+  margin-bottom: $space-4x;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.githubIcon {
+  margin-left: $space-2x;
+}
+
+.downloads {
+  @include breakpoint($sm) {
+    display: inline-flex;
+  }
+}

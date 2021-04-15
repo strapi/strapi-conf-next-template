@@ -1,0 +1,213 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include breakpoint($l) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.container {
+  display: block;
+  padding: 24px 0;
+  min-width: initial;
+
+  @include breakpoint($xs) {
+    padding: $space-8x 0;
+  }
+
+  @include breakpoint($l) {
+    grid-column: 1 / span 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 600px;
+    margin-right: $space-10x;
+  }
+}
+
+.nameAndLogo {
+  display: block;
+
+  @include breakpoint($xs) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $space-4x;
+
+  @include breakpoint($xs) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &.buttonsResources {
+    @include breakpoint($xs) {
+      grid-template-columns: 1fr;
+    }
+    @include breakpoint($sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.sponsorDetails {
+  padding: $space-4x 0 24px 0;
+  color: $gallery;
+  border-bottom: 1px solid $bossanova;
+
+  @include breakpoint($xs) {
+    padding: $space-4x 0 $space-8x 0;
+  }
+}
+
+.image {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 50%;
+  width: $space-16x;
+  height: $space-16x;
+  min-width: $space-16x;
+  min-height: $space-16x;
+  border: 1px solid $bossanova;
+
+  &::before {
+    content: '';
+    padding-top: 50%;
+    float: left;
+  }
+
+  @include breakpoint($xs) {
+    margin: 0 24px 0 0;
+  }
+}
+
+.name {
+  font-weight: 800;
+  color: $white;
+  font-size: 30px;
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: $space-4x 0 0 0;
+
+  a {
+    color: $white;
+  }
+
+  @include breakpoint($xs) {
+    font-size: 48px;
+    margin: 0 0 0 $space-4x;
+  }
+}
+
+.download {
+  width: 100%;
+  margin: 0;
+}
+
+.buttonResource {
+  background: $tolopea;
+  color: $white;
+  border: 1px solid $bossanova;
+  width: 100%;
+  min-width: 0;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logoWrapper {
+  perspective: 1000px;
+}
+
+.description {
+  color: $santas-gray;
+}
+
+.resources {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-weight: 800;
+  color: $white;
+  font-size: 24px;
+  margin: $space-4x 0;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+
+  @include breakpoint($xs) {
+    margin: $space-8x 0;
+  }
+}
+
+.videoWrapper {
+  @include breakpoint($l) {
+    grid-row: 1;
+    grid-column: 2 / span 1;
+  }
+}
+
+.iframeContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+
+  @include breakpoint($l) {
+    padding-top: 75%;
+  }
+
+  @include breakpoint($xxl) {
+    padding-top: 56.25%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.socialsWrapper {
+  width: auto;
+  display: inline-flex;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.disabled {
+  cursor: not-allowed;
+}

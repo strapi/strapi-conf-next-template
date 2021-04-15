@@ -1,0 +1,89 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.imageWrapper {
+  text-align: center;
+}
+
+.hero {
+  line-height: 1.15;
+  letter-spacing: 0.1px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 25px;
+
+  @include fluidType($sm, $lg, 36px, 55px);
+}
+
+.info {
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: $space-8x;
+  color: $heliotrope;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+  margin: auto auto 30px;
+  color: $santas-gray;
+}
+
+.descriptionSeparator {
+  height: 24px;
+  width: 1px;
+  background: $santas-gray;
+  margin: 0 $space-4x;
+}
+
+.info :global(p) {
+  margin: 0;
+}
+
+@include breakpoint($sm) {
+  .hero {
+    line-height: 1;
+    font-weight: 800;
+    margin: 0 0px 40px;
+  }
+
+  .info {
+    margin-bottom: 50px;
+    font-size: 24px;
+  }
+
+  .description {
+    margin: 40px auto;
+  }
+}
+
+.word {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.form {
+  margin: 0;
+}

@@ -1,0 +1,185 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - #{$header-height});
+
+  @include breakpoint($l) {
+    height: 100%;
+    flex-direction: row;
+  }
+}
+
+.streamContainer {
+  width: 100%;
+  padding: 70px 0 40px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint($l) {
+    width: calc(100vw - 303px);
+    height: 100%;
+    flex: auto;
+    padding: 0;
+  }
+}
+
+.iframeContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+
+  @include breakpoint($l) {
+    padding-top: 0;
+    height: 100%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    @include breakpoint($l) {
+      position: static;
+    }
+  }
+}
+
+.stream {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+  margin: $space-4x $space-4x;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(14, 1, 40, 1), rgba(14, 1, 40, 0)),
+      linear-gradient(to bottom, rgba(14, 1, 40, 1), rgba(14, 1, 40, 0) 70%);
+    height: 60px;
+    transform: translateY(100%);
+    display: block;
+
+    @include breakpoint($l) {
+      display: none;
+    }
+  }
+
+  @include breakpoint($sm) {
+    height: 100px;
+  }
+
+  @media screen and (min-width: 600px) {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: $space-4x;
+
+  @include breakpoint($sm) {
+    align-items: flex-start;
+  }
+}
+
+.stageName {
+  display: flex;
+  font-size: 24px;
+  color: $white;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin-bottom: $space-2x;
+
+  @include breakpoint($sm) {
+    font-size: $space-8x;
+    margin-bottom: 0;
+  }
+}
+
+.stageDescription {
+  font-size: 14px;
+  white-space: pre-wrap;
+  color: $white;
+  margin: 0;
+}
+
+.button {
+  border-radius: $space-2x;
+  border: none;
+  color: $white;
+  background: $royal-blue;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: $text-md;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  outline: none;
+  transition: background-color 0.2s ease;
+  padding: 0 $space-4x;
+  height: 50px;
+  width: 200px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: $space-4x;
+
+  &:hover,
+  &:focus {
+    background: black;
+    color: $white;
+  }
+
+  & > svg {
+    margin-left: $space-2x;
+    min-height: $space-8x;
+    min-width: $space-8x;
+  }
+
+  @media screen and (min-width: 600px) {
+    margin-top: 0;
+  }
+}

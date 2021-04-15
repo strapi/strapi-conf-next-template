@@ -1,0 +1,94 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.schedule {
+  width: 100%;
+  padding: 0 $space-4x $space-16x;
+  color: $santas-gray;
+  font-size: 14px;
+  flex: 0 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  --talk-card-width: 100%;
+  position: relative;
+  z-index: 1;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include breakpoint($l) {
+    background: $stratos;
+    height: unset;
+    min-height: 340px;
+    max-width: 303px;
+    max-height: calc(var(--100vh) - #{$header-height});
+    padding: $space-8x $space-4x $space-16x;
+    --talk-card-width: unset;
+    border-left: solid 1px $bossanova;
+    border-right: solid 1px $bossanova;
+  }
+
+  &:before {
+    content: '';
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(14, 1, 40, 1), rgba(14, 1, 40, 0)),
+      linear-gradient(to bottom, rgba(14, 1, 40, 1), rgba(14, 1, 40, 0) 70%);
+    height: 100px;
+    margin-bottom: -20px;
+    display: block;
+    z-index: 2;
+
+    @include breakpoint($l) {
+      display: none;
+    }
+  }
+}
+
+.header {
+  font-size: 24px;
+  color: $white;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.talks {
+  margin-top: $space-4x;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.talkCard {
+  width: 100%;
+
+  @include breakpoint($l) {
+    width: inherit;
+  }
+}

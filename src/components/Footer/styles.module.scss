@@ -1,0 +1,111 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.footer {
+  margin: auto auto 0;
+  width: 100%;
+  font-size: 12px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  color: $santas-gray;
+  z-index: 2;
+}
+
+.footerLink {
+  color: $santas-gray;
+  font-size: 12px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.footerLogo :global(svg) {
+  height: $space-4x;
+  transform: translateY(5px);
+  margin-left: 2px;
+}
+
+.footerLegal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: $space-4x;
+}
+
+.footerCopyright {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.footerSeparator {
+  margin-bottom: 15px;
+
+  &:last-child {
+    display: none;
+  }
+}
+
+.footerCenterGroup {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@include breakpoint($md) {
+  .footerHostedby {
+    display: none;
+  }
+
+  .footerLegal {
+    flex-direction: row;
+  }
+
+  .footerCopyright {
+    margin-bottom: 0;
+  }
+
+  .footerCenterGroup {
+    flex-direction: row;
+  }
+
+  .footerSeparator {
+    margin: 0 10px;
+    height: $space-4x;
+    width: 1px;
+    background: $santas-gray;
+    display: block;
+  }
+}
+
+.footerParagraph {
+  margin: 0;
+}
+
+.secondaryText {
+  color: $santas-gray;
+  display: none;
+
+  @include breakpoint($xxs) {
+    display: initial;
+  }
+}

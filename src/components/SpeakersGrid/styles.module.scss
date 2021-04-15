@@ -1,0 +1,98 @@
+@import 'styles/config.scss';
+
+/**
+ * Copyright 2020 Vercel Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.grid {
+  margin: 50px auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 24px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include breakpoint($xs) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+.card {
+  border-radius: $space-2x;
+  background: $cod-gray;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px $bossanova;
+  background: $tolopea;
+  padding: 1px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border: solid 1px $heliotrope;
+  }
+}
+
+.cardBody {
+  padding: $space-4x;
+  color: $santas-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.imageWrapper {
+  width: 100%;
+
+  & > div {
+    @include breakpoint($xs) {
+      width: 100% !important;
+    }
+  }
+}
+
+.image {
+  object-fit: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.name {
+  font-weight: bold;
+  color: $sea-shell;
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.company {
+  color: $sea-shell;
+}
+
+.title {
+  margin: 0;
+}
